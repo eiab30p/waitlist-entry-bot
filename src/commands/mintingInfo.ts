@@ -1,6 +1,5 @@
 import { MessageEmbed } from 'discord.js';
 import { CommandContext } from '../models/command_context';
-// import { mainFun } from "../utils/rarity";
 import { Command } from './command';
 
 export class MintCommand implements Command {
@@ -21,8 +20,7 @@ export class MintCommand implements Command {
                 { name: 'Wen Mint', value: 'Below is the info regarding minitng' },
                 { name: 'Price', value: '1 Sol', inline: true },
                 { name: 'Whitelist Price', value: ' .08 Sol', inline: true },
-                { name: 'Date', value: ' TBD', inline: true },
-                { name: 'Time', value: ' TBD', inline: true }
+                { name: 'Date', value: 'April 16th 2022', inline: true },
             )
             .setTimestamp();
 
