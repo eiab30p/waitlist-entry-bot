@@ -1,7 +1,7 @@
 {
-    "name": "cluck-bot",
+    "name": "info-bot",
     "version": "0.1.1",
-    "description": "A Cluck Discord bot",
+    "description": "A Info Discord bot",
     "repository": {
         "type": "git",
         "url": "Create Repo"
@@ -43,13 +43,9 @@
         "eslint-plugin-react": "^7.21.2",
         "eslint-plugin-react-hooks": "^4.0.0",
         "eslint-plugin-unicorn": "^22.0.0",
-        "istanbul-api": "3.0.x",
-        "istanbul-reports": "3.0.x",
         "jest": "26.4.x",
         "prettier": "2.1.2",
         "prettier-plugin-organize-imports": "^1.1.1",
-        "ts-jest": "26.4.x",
-        "ts-mockito": "2.6.x",
         "ts-node": "9.0.x",
         "tslint": "6.1.x",
         "typescript": "4.0.x"
