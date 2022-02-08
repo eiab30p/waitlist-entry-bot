@@ -14,5 +14,12 @@ export const mainFun = async (user, walletaddress) => {
     await doc.loadInfo(); // loads document properties and worksheets
 
     const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
-    const larryRow = await sheet.addRow({ name: user, wallet: walletaddress });
+    const rows = await sheet.getRows();
+    const found = rows.filter(row => row.name == user || row.wallet == walletaddress);
+
+    if (found.length == 0) {
+        await sheet.addRow({ name: user, wallet: walletaddress });
+        return true;
+    }
+    return false;
 };

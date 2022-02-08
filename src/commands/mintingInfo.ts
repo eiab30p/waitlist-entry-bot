@@ -27,7 +27,7 @@ export class MintCommand implements Command {
         try {
             await parsedUserCommand.originalMessage.reply(embed);
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             await parsedUserCommand.originalMessage.reply('Try !whitelist walletaddress');
         }
     }

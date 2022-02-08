@@ -6,24 +6,29 @@ export class WhitelistCommand implements Command {
     commandNames = ['whitelist'];
 
     getHelpMessage(commandPrefix: string): string {
-        return `Try  ${commandPrefix}whitelist walletAddress`;
+        return `Try ${commandPrefix}whitelist walletAddress`;
     }
 
     async run(parsedUserCommand: CommandContext): Promise<void> {
         if (parsedUserCommand.args.length === 0) {
-            await parsedUserCommand.originalMessage.reply('Try !whitelist walletAddress');
+            await parsedUserCommand.originalMessage.reply('Try Again');
         }
         let user = parsedUserCommand.author!.user!.username;
         let walletAddress = parsedUserCommand.args[0];
 
-        console.log(user, walletAddress);
-        mainFun(user, walletAddress);
+        const work = await mainFun(user, walletAddress);
 
         try {
-            await parsedUserCommand.originalMessage.reply(`Wallet Added`);
+            if (work) {
+                await parsedUserCommand.originalMessage.reply(`Wallet Added!`);
+            } else {
+                await parsedUserCommand.originalMessage.reply(
+                    `\nAlready Added. \nIf this is wrong contact the dev team`
+                );
+            }
         } catch (e) {
             console.log(e);
-            await parsedUserCommand.originalMessage.reply('Try !whitelist walletaddress');
+            await parsedUserCommand.originalMessage.reply('Try Again');
         }
     }
 
