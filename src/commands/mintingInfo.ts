@@ -20,7 +20,7 @@ export class MintCommand implements Command {
                 { name: 'Wen Mint', value: 'Below is the info regarding minitng' },
                 { name: 'Price', value: '1 Sol', inline: true },
                 { name: 'Whitelist Price', value: ' .08 Sol', inline: true },
-                { name: 'Date', value: 'April 16th 2022', inline: true },
+                { name: 'Date/Time', value: 'April 16th 19:00 (UTC)', inline: true }
             )
             .setTimestamp();
 
