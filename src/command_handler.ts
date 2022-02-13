@@ -1,5 +1,7 @@
 import { Message } from 'discord.js';
+
 import { Command } from './commands/command';
+import { LeaderBoardCommand } from './commands/leaderboard';
 import { MintCommand } from './commands/mintingInfo';
 import { WhitelistCommand } from './commands/whitelist';
 import { CommandContext } from './models/command_context';
@@ -11,7 +13,7 @@ export class CommandHandler {
     private readonly prefix: string;
 
     constructor(prefix: string) {
-        const commandClasses = [WhitelistCommand, MintCommand];
+        const commandClasses = [WhitelistCommand, MintCommand, LeaderBoardCommand];
 
         this.commands = commandClasses.map(CommandClass => new CommandClass());
         this.prefix = prefix;
